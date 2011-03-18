@@ -1,11 +1,12 @@
 package org.exoplatform.jcr.example.pojo;
 
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
 public class Person {
 	private String name;
-	private Date birthday;
+	private Calendar birthday;
 	List<Book> booksOwner;
 	List<Book> booksAuthor;
 	
@@ -15,10 +16,10 @@ public class Person {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public Date getBirthday() {
+	public Calendar getBirthday() {
 		return birthday;
 	}
-	public void setBirthday(Date birthday) {
+	public void setBirthday(Calendar birthday) {
 		this.birthday = birthday;
 	}
 	public List<Book> getBooksOwner() {
