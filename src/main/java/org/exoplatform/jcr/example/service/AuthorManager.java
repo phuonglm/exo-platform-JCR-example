@@ -9,5 +9,5 @@ public interface AuthorManager {
 	public void addAuthor(Person author);
 	public Book getAuthor(int ID);
 	public void deleteAuthor(int authorID);
-
+	public String sayName();
 }

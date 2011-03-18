@@ -6,8 +6,7 @@ import org.exoplatform.social.common.jcr.JCRSessionManager;
 
 public abstract class Service {
 	protected JCRSessionManager sessionManager;
-	public Service(){
-		
+	public Service(){		
 	}
 	
 	public Service(JCRSessionManager sessionManager) {
@@ -18,4 +17,7 @@ public abstract class Service {
 		this.sessionManager = sessionManager;
 	}
 	
+	public String sayName(){
+		return "My Services Name";
+	}
 }

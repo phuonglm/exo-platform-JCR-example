@@ -2,16 +2,13 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>to.us.phuonglm</groupId>
+	<groupId>org.exoplatfrom.jcr.example</groupId>
 	<artifactId>exojcr</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
 
 	<name>exojcr</name>
 	<url>http://maven.apache.org</url>
-
 	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<javax.resource.version>1.5</javax.resource.version>
 		<javax.servlet.version>2.5</javax.servlet.version>
 		<javax.portlet.version>2.0</javax.portlet.version>
@@ -44,19 +41,14 @@
 		<quartz.version>1.5.2</quartz.version>
 		<picocontainer.version>1.1</picocontainer.version>
 
-		<org.exoplatform.kernel.version>2.2.7-GA
-		</org.exoplatform.kernel.version>
-		<org.exoplatform.core.version>2.3.7-GA</org.exoplatform.core.version>
+		<org.exoplatform.kernel.version>2.3.0-Beta03</org.exoplatform.kernel.version>
+      	<org.exoplatform.core.version>2.4.0-Beta03</org.exoplatform.core.version>
 		<org.exoplatform.ws.version>2.1.7-GA</org.exoplatform.ws.version>
-		<org.exoplatform.jcr.version>1.12.7-GA</org.exoplatform.jcr.version>
-		<org.exoplatform.portal.version>3.2.0-PLF-SNAPSHOT
-		</org.exoplatform.portal.version>
-		<org.exoplatform.ecms.version>2.2.0-Beta2-SNAPSHOT
-		</org.exoplatform.ecms.version>
-		<org.exoplatform.commons.version>1.0.3
-		</org.exoplatform.commons.version>
-		<org.exoplatform.exopackage.version>1.1.0
-		</org.exoplatform.exopackage.version>
+		<org.exoplatform.jcr.version>1.14.0-Beta03</org.exoplatform.jcr.version>
+		<org.exoplatform.portal.version>3.2.0-PLF-SNAPSHOT</org.exoplatform.portal.version>
+		<org.exoplatform.ecms.version>2.2.0-Beta2-SNAPSHOT</org.exoplatform.ecms.version>
+		<org.exoplatform.commons.version>1.0.3</org.exoplatform.commons.version>
+		<org.exoplatform.exopackage.version>1.1.0</org.exoplatform.exopackage.version>
 		<org.exoplatform.tool.version>1.0.0</org.exoplatform.tool.version>
 
 		<org.gatein.common.version>2.0.3-GA</org.gatein.common.version>
@@ -78,11 +70,9 @@
 
 		<net.oauth.core.version>20090531</net.oauth.core.version>
 		<net.oauth.version>20080621</net.oauth.version>
-		<net.sourceforge.nekohtml.version>1.9.9
-		</net.sourceforge.nekohtml.version>
+		<net.sourceforge.nekohtml.version>1.9.9</net.sourceforge.nekohtml.version>
 
-		<com.google.collections.version>1.0-rc2
-		</com.google.collections.version>
+		<com.google.collections.version>1.0-rc2</com.google.collections.version>
 		<com.google.code.guice.version>2.0</com.google.code.guice.version>
 		<com.ibm.icu.version>3.8</com.ibm.icu.version>
 		<com.sun.xml.bind.version>2.1.7</com.sun.xml.bind.version>
@@ -125,7 +115,15 @@
 					</systemProperties>
 				</configuration>
 			</plugin>
-
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.0.2</version>
+				<configuration>
+					<source>1.5</source>
+					<target>1.5</target>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
 	<dependencies>
@@ -134,98 +132,98 @@
 			<groupId>javax.servlet</groupId>
 			<artifactId>servlet-api</artifactId>
 			<scope>provided</scope>
-			<version>2.5</version>
+			<version>${javax.servlet.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>javax.jcr</groupId>
 			<artifactId>jcr</artifactId>
 			<scope>provided</scope>
-			<version>1.0</version>
+			<version>${javax.jcr.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>commons-lang</groupId>
 			<artifactId>commons-lang</artifactId>
 			<scope>provided</scope>
-			<version>2.4</version>
+			<version>${commons-lang.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.gatein.pc</groupId>
 			<artifactId>pc-api</artifactId>
 			<scope>provided</scope>
-			<version>2.2.0-GA</version>
+			<version>${org.gatein.pc.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.exoplatform.kernel</groupId>
 			<artifactId>exo.kernel.commons</artifactId>
 			<scope>provided</scope>
-			<version>2.2.7-GA</version>
+			<version>${org.exoplatform.kernel.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.exoplatform.kernel</groupId>
 			<artifactId>exo.kernel.container</artifactId>
 			<scope>provided</scope>
-			<version>2.2.7-GA</version>
+			<version>${org.exoplatform.kernel.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.exoplatform.core</groupId>
 			<artifactId>exo.core.component.organization.api</artifactId>
 			<scope>provided</scope>
-			<version>2.3.7-GA</version>
+			<version>${org.exoplatform.core.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.exoplatform.jcr</groupId>
 			<artifactId>exo.jcr.component.core</artifactId>
 			<scope>provided</scope>
-			<version>1.12.7-GA</version>
+			<version>${org.exoplatform.jcr.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.exoplatform.jcr</groupId>
 			<artifactId>exo.jcr.component.ext</artifactId>
 			<scope>provided</scope>
-			<version>1.12.7-GA</version>
+			<version>${org.exoplatform.jcr.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.exoplatform.portal</groupId>
 			<artifactId>exo.portal.component.portal</artifactId>
 			<scope>provided</scope>
-			<version>3.2.0-PLF-SNAPSHOT</version>
+			<version>${org.exoplatform.portal.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.exoplatform.portal</groupId>
 			<artifactId>exo.portal.component.web.api</artifactId>
 			<scope>provided</scope>
-			<version>3.2.0-PLF-SNAPSHOT</version>
+			<version>${org.exoplatform.portal.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.exoplatform.portal</groupId>
 			<artifactId>exo.portal.component.web.controller</artifactId>
 			<scope>provided</scope>
-			<version>3.2.0-PLF-SNAPSHOT</version>
+			<version>${org.exoplatform.portal.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.exoplatform.portal</groupId>
 			<artifactId>exo.portal.webui.framework</artifactId>
 			<scope>provided</scope>
-			<version>3.2.0-PLF-SNAPSHOT</version>
+			<version>${org.exoplatform.portal.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.exoplatform.portal</groupId>
 			<artifactId>exo.portal.webui.portal</artifactId>
 			<scope>provided</scope>
-			<version>3.2.0-PLF-SNAPSHOT</version>
+			<version>${org.exoplatform.portal.version}</version>
 		</dependency>
 
 		<dependency>
@@ -239,41 +237,34 @@
 			<groupId>org.exoplatform.portal</groupId>
 			<artifactId>exo.portal.component.test.core</artifactId>
 			<scope>provided</scope>
-			<version>3.2.0-PLF-SNAPSHOT</version>
+			<version>${org.exoplatform.portal.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.exoplatform.portal</groupId>
 			<artifactId>exo.portal.component.test.jcr</artifactId>
 			<scope>provided</scope>
-			<version>3.2.0-PLF-SNAPSHOT</version>
+			<version>${org.exoplatform.portal.version}</version>
 		</dependency>
 
 		<dependency>
-			<groupId>org.exoplatform.social</groupId>
-			<artifactId>exo.social.component.common</artifactId>
-			<version>1.2.0-GA-20110228.043345-106</version>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
-			<version>1.5.8</version>
+			<version>${org.slf4j.version}</version>
 			<type>jar</type>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-log4j12</artifactId>
-			<version>1.5.8</version>
+			<version>${org.slf4j.version}</version>
 			<type>jar</type>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>hsqldb</groupId>
 			<artifactId>hsqldb</artifactId>
-			<version>1.8.0.7</version>
+			<version>${hsqldb.version}</version>
 			<type>jar</type>
 			<scope>provided</scope>
 		</dependency>

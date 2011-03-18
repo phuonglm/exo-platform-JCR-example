@@ -20,6 +20,7 @@ import org.exoplatform.jcr.example.service.Service;
 import org.exoplatform.social.common.jcr.JCRSessionManager;
 import org.exoplatform.social.common.jcr.QueryBuilder;
 
+ 
 public class BookManagerImpl extends Service implements BookManager { 
 	private Session session;
 	
@@ -30,6 +31,11 @@ public class BookManagerImpl extends Service implements BookManager {
 	
 	public BookManagerImpl(JCRSessionManager sessionManager) {
 		super(sessionManager);
+	}
+	
+	@Override
+	public String sayName(){
+		return "My Services Name is BookManager";
 	}
 	/* (non-Javadoc)
 	 * @see org.exoplatform.jcr.example.service.impl.BookManager#addBook(org.exoplatform.jcr.example.pojo.Book)

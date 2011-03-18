@@ -11,5 +11,5 @@ public interface BookManager {
 	public Book getBook(String bookID);
 	public void deleteBook(String bookID); 
 	public List<Book> searchBook(Book book);
-
+	public String sayName();
 }

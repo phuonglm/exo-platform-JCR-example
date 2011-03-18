@@ -11,6 +11,11 @@ public class AuthorManagerImpl extends Service implements AuthorManager {
 		super();
 	}
 	
+	@Override
+	public String sayName(){
+		return "My Services Name is AuthorManager";
+	}
+	
 	public AuthorManagerImpl(JCRSessionManager sessionManager){
 		super(sessionManager);
 	}
