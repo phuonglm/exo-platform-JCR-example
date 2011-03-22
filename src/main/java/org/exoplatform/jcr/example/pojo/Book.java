@@ -1,10 +1,14 @@
 package org.exoplatform.jcr.example.pojo;
 
 import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
+import org.chromattic.api.annotations.PrimaryType;
+
+
+@PrimaryType(name = "example:book")
 
 public class Book {
+	
 	private int id;
 	private String title;
 	private Calendar publishDay;

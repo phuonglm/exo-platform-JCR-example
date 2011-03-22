@@ -60,7 +60,7 @@ public class PersonManagerTest extends AbstractKernelTest {
 			QueryManager queryManager = session.getWorkspace()
 					.getQueryManager();
 
-			Query query = queryManager.createQuery("select * from test:person",
+			Query query = queryManager.createQuery("select * from example:person",
 					Query.SQL);
 			QueryResult result = query.execute();
 			NodeIterator nodeIterator = result.getNodes();

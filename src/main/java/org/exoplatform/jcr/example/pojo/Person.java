@@ -3,7 +3,9 @@ package org.exoplatform.jcr.example.pojo;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+import org.chromattic.api.annotations.PrimaryType;
 
+@PrimaryType(name = "example:person")
 public class Person {
 	private String name;
 	private Calendar birthday;

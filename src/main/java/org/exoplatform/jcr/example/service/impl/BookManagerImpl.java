@@ -43,7 +43,7 @@ public class BookManagerImpl extends Service implements BookManager {
 	public void addBook(Book book){
 		this.session = sessionManager.getOrOpenSession();
 		try {
-			Node node = session.getRootNode().addNode("book","test:book");
+			Node node = session.getRootNode().addNode("book","example:book");
 
 			node.setProperty("title", book.getTitle());
 			node.setProperty("price", book.getPrice());
@@ -127,7 +127,7 @@ public class BookManagerImpl extends Service implements BookManager {
 		List<Book> result = null;
 		this.session = sessionManager.getOrOpenSession();
 		QueryBuilder queryBuilder = new QueryBuilder(session);
-		queryBuilder = queryBuilder.select("test:book");
+		queryBuilder = queryBuilder.select("example:book");
 		
 		if(!book.getTitle().isEmpty()){
 			queryBuilder = queryBuilder.equal("title", book.getTitle());

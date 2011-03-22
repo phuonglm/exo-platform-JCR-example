@@ -21,7 +21,7 @@
   xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
   xmlns:mix="http://www.jcp.org/jcr/mix/1.0"
   xmlns:jcr="http://www.jcp.org/jcr/1.0">
-  <nodeType name="test:book" isMixin="false" hasOrderableChildNodes="false" primaryItemName="">
+  <nodeType name="example:book" isMixin="false" hasOrderableChildNodes="false" primaryItemName="">
     <supertypes>
       <supertype>nt:base</supertype>
     </supertypes>
@@ -34,7 +34,7 @@
 		<propertyDefinition name="borrowed" requiredType="BOOLEAN" autoCreated="false" mandatory="false" onParentVersion="COPY" protected="false" multiple="false"/>
     </propertyDefinitions>
   </nodeType>
-  <nodeType name="test:person" isMixin="false" hasOrderableChildNodes="false" primaryItemName="">
+  <nodeType name="example:person" isMixin="false" hasOrderableChildNodes="false" primaryItemName="">
     <supertypes>
       <supertype>nt:base</supertype>
     </supertypes>

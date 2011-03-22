@@ -61,7 +61,7 @@ public class BookManagerTest extends AbstractKernelTest {
 			QueryManager queryManager = session.getWorkspace()
 					.getQueryManager();
 
-			Query query = queryManager.createQuery("select * from test:book",
+			Query query = queryManager.createQuery("select * from example:book",
 					Query.SQL);
 			QueryResult result = query.execute();
 			NodeIterator nodeIterator = result.getNodes();

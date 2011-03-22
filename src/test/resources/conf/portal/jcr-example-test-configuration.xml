@@ -29,7 +29,7 @@
 			<init-params>
 				<properties-param>
 					<name>namespaces</name>
-					<property name="test" value="http://exoplatfom.org/testNameSpace" />
+					<property name="example" value="http://exoplatfom.org/exampleNameSpace" />
 				</properties-param>
 			</init-params>
 		</component-plugin>

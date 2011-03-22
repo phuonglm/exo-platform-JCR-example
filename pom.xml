@@ -275,5 +275,47 @@
 			<type>jar</type>
 			<scope>provided</scope>
 		</dependency>
+		<dependency>
+			<groupId>org.chromattic</groupId>
+			<artifactId>chromattic.common</artifactId>
+			<version>1.0.4</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.chromattic</groupId>
+			<artifactId>chromattic.apt</artifactId>
+			<version>${org.chromattic.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.chromattic</groupId>
+			<artifactId>chromattic.core</artifactId>
+			<version>${org.chromattic.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.chromattic</groupId>
+			<artifactId>chromattic.api</artifactId>
+			<version>${org.chromattic.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.chromattic</groupId>
+			<artifactId>chromattic.exo</artifactId>
+			<version>${org.chromattic.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.chromattic</groupId>
+			<artifactId>chromattic.metamodel</artifactId>
+			<version>${org.chromattic.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.chromattic</groupId>
+			<artifactId>chromattic.spi</artifactId>
+			<version>${org.chromattic.version}</version>
+			<scope>provided</scope>
+		</dependency>
 	</dependencies>
 </project>
