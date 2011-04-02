@@ -78,13 +78,12 @@ public class BookManagerTest extends AbstractKernelTest {
 
 	public void testBookService() {
 		BookManager bookManager = (BookManager) portalContainer.getComponentInstanceOfType(BookManager.class);
-		bookManager.setSessionManager(sessionManager);
 		Book book = new Book();
 		book.setTitle("hello girl");
 		book.setPrice(0);
 		book.setBorrowed(false);
 		book.setPublishDay(Calendar.getInstance());
-		bookManager.addBook(book);
-		assertEquals(bookManager.searchBook(book).size(), 1);
+		bookManager.save(book);
+		assertEquals(bookManager.search(book).size(), 1);
 	}
 }

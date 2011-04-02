@@ -2,53 +2,54 @@ package org.exoplatform.jcr.example.service.impl;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import org.exoplatform.jcr.example.pojo.Person;
+import org.exoplatform.container.xml.InitParams;
 import org.exoplatform.jcr.example.pojo.Book;
+import org.exoplatform.jcr.example.pojo.Person;
 import org.exoplatform.jcr.example.service.PersonManager;
 import org.exoplatform.jcr.example.service.Service;
-import org.exoplatform.social.common.jcr.JCRSessionManager;
 
-public class PersonManagerImpl extends Service implements PersonManager {
-	public PersonManagerImpl(){
-		super();
-	}
-	
-	@Override
-	public String sayName(){
-		return "My Services Name is PersonManager";
-	}
-	
-	public PersonManagerImpl(JCRSessionManager sessionManager){
-		super(sessionManager);
-	}
+public class PersonManagerImpl extends Service
+  implements PersonManager
+{
+  public PersonManagerImpl()
+  {
+  }
 
+  public PersonManagerImpl(InitParams initParams)
+  {
+    this.workspace = getParam(initParams, "workspace", "portal-system");
+  }
 
-	public void deleteAuthor(int authorID) {
-		// TODO Auto-generated method stub
-		
-	}
+  public String sayName()
+  {
+    return "My Services Name is PersonManager";
+  }
 
-	public void addPerson(Person person) {
-		// TODO Auto-generated method stub
-		
-	}
+  public PersonManagerImpl(String workspace) {
+    super(workspace);
+  }
 
-	public Book getPerson(String personID) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+  public void deleteAuthor(int authorID)
+  {
+  }
 
-	public void deletePerson(String personID) {
-		// TODO Auto-generated method stub
-		
-	}
+  public void addPerson(Person person)
+  {
+  }
 
-	public List<Person> searchPerson(Person person) {
-		// TODO Auto-generated method stub
-		ArrayList<Person> results = new ArrayList<Person>();
-		results.add(person);
-		return results;
-	}
+  public Book getPerson(String personID)
+  {
+    return null;
+  }
 
+  public void deletePerson(String personID)
+  {
+  }
+
+  public List<Person> searchPerson(Person person)
+  {
+    ArrayList results = new ArrayList();
+    results.add(person);
+    return results;
+  }
 }

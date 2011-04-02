@@ -77,7 +77,6 @@ public class PersonManagerTest extends AbstractKernelTest {
 
 	public void testAuthorService() {
 		PersonManager authorManager = (PersonManager)portalContainer.getComponentInstanceOfType(PersonManager.class);
-		authorManager.setSessionManager(sessionManager);
 		Person author = new Person();
 		author.setName("Ly Minh Phuong");
 		author.setBirthday( Calendar.getInstance());

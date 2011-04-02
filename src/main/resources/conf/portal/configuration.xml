@@ -14,10 +14,32 @@
 	<component>
 		<key>org.exoplatform.jcr.example.service.BookManager</key>
 		<type>org.exoplatform.jcr.example.service.impl.BookManagerImpl</type>
+		<init-params>			
+			<value-param>
+				<name>workspace</name>
+				<value>portal-system</value>
+			</value-param>
+		</init-params>		
 	</component>
 	<component>
 		<key>org.exoplatform.jcr.example.service.PersonManager</key>
 		<type>org.exoplatform.jcr.example.service.impl.PersonManagerImpl</type>
+		<init-params>			
+			<value-param>
+				<name>workspace</name>
+				<value>portal-system</value>
+			</value-param>
+		</init-params>			
+	</component>
+	<component>
+		<key>org.exoplatform.jcr.example.service.BookStorage</key>
+		<type>org.exoplatform.jcr.example.service.impl.BookStorageImpl</type>
+		<init-params>			
+			<value-param>
+				<name>workspace</name>
+				<value>portal-system</value>
+			</value-param>
+		</init-params>			
 	</component>
 	<external-component-plugins>
 		<target-component>org.exoplatform.services.jcr.RepositoryService

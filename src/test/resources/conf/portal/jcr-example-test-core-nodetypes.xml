@@ -23,7 +23,8 @@
   xmlns:jcr="http://www.jcp.org/jcr/1.0">
   <nodeType name="example:book" isMixin="false" hasOrderableChildNodes="false" primaryItemName="">
     <supertypes>
-      <supertype>nt:base</supertype>
+      <supertype>nt:base</supertype>    
+      <supertype>mix:referenceable</supertype>
     </supertypes>
     <propertyDefinitions>
 		<propertyDefinition name="title" requiredType="String" autoCreated="false" mandatory="true" onParentVersion="COPY" protected="false" multiple="false"/>
@@ -36,7 +37,8 @@
   </nodeType>
   <nodeType name="example:person" isMixin="false" hasOrderableChildNodes="false" primaryItemName="">
     <supertypes>
-      <supertype>nt:base</supertype>
+      <supertype>nt:base</supertype>    
+      <supertype>mix:referenceable</supertype>
     </supertypes>
     <propertyDefinitions>
 		<propertyDefinition name="name" requiredType="String" autoCreated="false" mandatory="true" onParentVersion="COPY" protected="false" multiple="false"/>
