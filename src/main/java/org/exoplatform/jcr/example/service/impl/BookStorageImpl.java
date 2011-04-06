@@ -28,10 +28,10 @@ public class BookStorageImpl extends Service
       Session session = getSessionManager().getOrOpenSession();
       try {
         Node node = session.getRootNode().addNode("books", "example:book");
-        node.setProperty("title", bookToCreate.getTitle());
-        node.setProperty("price", bookToCreate.getPrice());
-        node.setProperty("publishDay", bookToCreate.getPublishDay());
-        node.setProperty("borrowed", bookToCreate.isBorrowed());
+        node.setProperty(Book.TITLE, bookToCreate.getTitle());
+        node.setProperty(Book.PRICE, bookToCreate.getPrice());
+        node.setProperty(Book.PUBLISHDAY, bookToCreate.getPublishDay());
+        node.setProperty(Book.BORROWED, bookToCreate.isBorrowed());
         bookToCreate.setId(node.getUUID());
       } catch (Exception e) {
         throw new JCRCRUDException(e.getMessage());
@@ -47,10 +47,10 @@ public class BookStorageImpl extends Service
       Session session = getSessionManager().getOrOpenSession();
       try {
         Node node = session.getNodeByUUID(bookToUpdate.getId());
-        node.setProperty("title", bookToUpdate.getTitle());
-        node.setProperty("price", bookToUpdate.getPrice());
-        node.setProperty("publishDay", bookToUpdate.getPublishDay());
-        node.setProperty("borrowed", bookToUpdate.isBorrowed());
+        node.setProperty(Book.TITLE, bookToUpdate.getTitle());
+        node.setProperty(Book.PRICE, bookToUpdate.getPrice());
+        node.setProperty(Book.PUBLISHDAY, bookToUpdate.getPublishDay());
+        node.setProperty(Book.BORROWED, bookToUpdate.isBorrowed());
       } catch (Exception e) {
         throw new JCRCRUDException(e.getMessage());
       } finally {
@@ -101,10 +101,10 @@ public class BookStorageImpl extends Service
           Node node = session.getNodeByUUID(bookToSelect.getId());
           Book resultBook = new Book();
           resultBook.setId(node.getUUID());
-          resultBook.setTitle(node.getProperty("title").getString());
-          resultBook.setBorrowed(node.getProperty("borrowed").getBoolean());
-          resultBook.setPrice(node.getProperty("price").getDouble());
-          resultBook.setPublishDay(node.getProperty("publishDay").getDate());
+          resultBook.setTitle(node.getProperty(Book.TITLE).getString());
+          resultBook.setBorrowed(node.getProperty(Book.BORROWED).getBoolean());
+          resultBook.setPrice(node.getProperty(Book.PRICE).getDouble());
+          resultBook.setPublishDay(node.getProperty(Book.PUBLISHDAY).getDate());
           result.add(resultBook);
         } catch (Exception e) {
           e.printStackTrace();
@@ -114,7 +114,7 @@ public class BookStorageImpl extends Service
         queryBuilder = queryBuilder.select("example:book");
 
         if (!bookToSelect.getTitle().isEmpty()) {
-          queryBuilder = queryBuilder.like("title", "%" + bookToSelect.getTitle() + "%");
+          queryBuilder = queryBuilder.like(Book.TITLE, "%" + bookToSelect.getTitle() + "%");
         }
         try
         {
@@ -125,10 +125,10 @@ public class BookStorageImpl extends Service
               Node node = (Node)nodeIterator.next();
               Book resultBook = new Book();
               resultBook.setId(node.getUUID());
-              resultBook.setTitle(node.getProperty("title").getString());
-              resultBook.setBorrowed(node.getProperty("borrowed").getBoolean());
-              resultBook.setPrice(node.getProperty("price").getDouble());
-              resultBook.setPublishDay(node.getProperty("publishDay").getDate());
+              resultBook.setTitle(node.getProperty(Book.TITLE).getString());
+              resultBook.setBorrowed(node.getProperty(Book.BORROWED).getBoolean());
+              resultBook.setPrice(node.getProperty(Book.PRICE).getDouble());
+              resultBook.setPublishDay(node.getProperty(Book.PUBLISHDAY).getDate());
               result.add(resultBook);
             }
           }

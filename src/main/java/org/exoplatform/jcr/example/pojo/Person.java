@@ -6,6 +6,11 @@ import org.chromattic.api.annotations.PrimaryType;
 
 @PrimaryType(name = "example:person")
 public class Person {
+
+	public static final String NAME = "name";
+	public static final String BIRTHDAY = "birthday";
+
+
 	private String id;
 	private String name;
 	private Calendar birthday;

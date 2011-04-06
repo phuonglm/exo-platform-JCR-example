@@ -6,6 +6,7 @@ import org.exoplatform.container.PortalContainer;
 import org.exoplatform.container.xml.InitParams;
 import org.exoplatform.jcr.example.exception.JCRCRUDException;
 import org.exoplatform.jcr.example.pojo.Book;
+import org.exoplatform.jcr.example.pojo.Person;
 import org.exoplatform.jcr.example.service.BookManager;
 import org.exoplatform.jcr.example.service.BookStorage;
 import org.exoplatform.jcr.example.service.Service;
@@ -34,7 +35,14 @@ public class BookManagerImpl extends Service
     try
     {
       BookStorage bookStorage = (BookStorage)PortalContainer.getInstance().getComponentInstanceOfType(BookStorage.class);
+      if(book.getOwner() != null){
+    	  Person owner = book.getOwner();
+    	  if(owner.getId() == null || owner.getId().isEmpty()){
+    		  
+    	  }
+      }
       bookStorage.create(book);
+
     } catch (JCRCRUDException e) {
       e.printStackTrace();
     } catch (Exception e) {
